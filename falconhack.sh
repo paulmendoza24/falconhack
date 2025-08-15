@@ -253,7 +253,7 @@ elif [[ $process == 19 || $process == 019 ]]; then
     cd Mr.Holmes
     sudo chmod +x install.sh
     sudo bash install.sh
-    source /home/falcon/venv/bin/activate
+    source ~/venv/bin/activate
     pip3 install -r requirements.txt
     python3 MrHolmes.py
     
