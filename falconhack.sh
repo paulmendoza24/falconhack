@@ -1,5 +1,5 @@
 #!/bin/bash
-# FalconHack v1.0 - Multi-Tool Installer
+# FalconHack v1.1 - Multi-Tool Installer
 # Author: Paul Mendoza
 # GitHub: https://github.com/paulmendoza24/FalconHack
 
@@ -9,11 +9,11 @@ clear
 
 echo -e '\033[0;31m
 ░█▀▀░█▀█░█░░░█▀▀░█▀█░█▀█░░░░░▀█▀░█▀█░█▀█░█░░░█▀▀░
-░█▀▀░█▀█░█░░░█░░░█░█░█░█░▄▄▄░░█░░█░█░█░█░█░░░▀▀█░   \033[0;37mv1.0\033[0;31m
+░█▀▀░█▀█░█░░░█░░░█░█░█░█░▄▄▄░░█░░█░█░█░█░█░░░▀▀█░   \033[0;37mv1.1\033[0;31m
 ░▀░░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░░░░░░▀░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░
                     
        
-\033[0;34mCoded by \033[1;33mPaul Mendoza\033[0m                       \033[0;34mVersion: \033[1;33mv1.0\033[0m
+\033[0;34mCoded by \033[1;33mPaul Mendoza\033[0m                       \033[0;34mVersion: \033[1;33mv1.1\033[0m
 \033[0;34mGithub: \033[1;33mhttps://github.com/paulmendoza24\033[0m    \033[0;34mExit: \033[1;33mCTRL+C\033[0m
 
 \033[0;30m\033[41mOPTION:\033[0m
@@ -26,8 +26,8 @@ echo -e '\033[0;31m
 \e[37m[11]\033[0;36m HackerPro                    \e[37m[12]\033[0;36m RED_HAWK
 \e[37m[13]\033[0;36m VirusCrafter                 \e[37m[14]\033[0;36m Info-Site
 \e[37m[15]\033[0;36m BadMod	                  \e[37m[16]\033[0;36m Facebash
-\e[37m[17]\033[0;36m DARKARMY                     \e[37m[18]\033[0;36m AUTO-IP-CHANGER\033[0m               
-
+\e[37m[17]\033[0;36m DARKARMY                     \e[37m[18]\033[0;36m AUTO-IP-CHANGER\033[0m       
+\e[37m[19]\033[0;36m Mr.Holmes(OSINT)       
 '
 
 
@@ -41,8 +41,8 @@ if [[ $process == 1 || $process == 01 ]]; then
     pkg install python python3 -y
     pkg install pip pip3 -y
     pkg install curl -y
-    apt update
-    apt upgrade -y
+    sudo apt update
+    sudo apt upgrade -y
     clear
     echo -e "\033[0;30m\033[46m Full update...\033[0m"
     sleep 3
@@ -243,6 +243,20 @@ elif [[ $process == 18 || $process == 018 ]]; then
     python3 install.py
     aut
 
+elif [[ $process == 19 || $process == 019 ]]; then
+    clear
+    echo -e "\033[0;30m\033[46m Installation may take some time.\033[0m"
+    sleep 3
+    cd Tools
+    git clone https://github.com/Lucksi/Mr.Holmes
+    sudo apt-get update
+    cd Mr.Holmes
+    sudo chmod +x install.sh
+    sudo bash install.sh
+    source /home/falcon/venv/bin/activate
+    pip3 install -r requirements.txt
+    python3 MrHolmes.py
+    
 else   
 	clear
     echo -e '\033[36;40;1m You entered the wrong code.'	
